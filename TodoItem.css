@@ -1,0 +1,168 @@
+.todo-item-card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 0.9rem 1.25rem;
+  background: rgba(255, 255, 255, 0.6);
+  border: 1px solid var(--card-border);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-sm);
+  transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+  position: relative;
+  overflow: hidden;
+}
+
+.todo-item-card:hover {
+  background: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.todo-item-card.completed {
+  background: rgba(255, 255, 255, 0.35);
+  border-color: rgba(255, 255, 255, 0.25);
+  box-shadow: none;
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 22px;
+  height: 22px;
+  border-radius: var(--radius-full);
+  border: 2px solid var(--primary);
+  background: transparent;
+  cursor: pointer;
+  transition: var(--transition-normal);
+  flex-shrink: 0;
+  outline: none;
+}
+
+.custom-checkbox:hover {
+  background: rgba(2, 132, 199, 0.1);
+  transform: scale(1.05);
+}
+
+.custom-checkbox.checked {
+  background: var(--success);
+  border-color: var(--success);
+  color: #ffffff;
+}
+
+.custom-checkbox.checked:hover {
+  background: var(--success-dark);
+  border-color: var(--success-dark);
+}
+
+.check-icon {
+  animation: pop-check 0.2s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+}
+
+@keyframes pop-check {
+  0% {
+    transform: scale(0);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+/* Content Container */
+.todo-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  cursor: pointer;
+}
+
+.todo-text {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--text-dark);
+  transition: var(--transition-normal);
+  word-break: break-word;
+}
+
+.completed .todo-text {
+  text-decoration: line-through;
+  color: var(--text-light);
+}
+
+/* Category Badge */
+.todo-category-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.25rem;
+  padding: 0.15rem 0.5rem;
+  border-radius: var(--radius-full);
+  font-size: 0.65rem;
+  font-weight: 700;
+  width: fit-content;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  transition: var(--transition-normal);
+}
+
+.completed .todo-category-badge {
+  opacity: 0.6;
+}
+
+/* Badges Colors */
+.todo-category-badge.cat-work {
+  background: var(--cat-work-bg);
+  color: var(--cat-work-text);
+}
+
+.todo-category-badge.cat-personal {
+  background: var(--cat-personal-bg);
+  color: var(--cat-personal-text);
+}
+
+.todo-category-badge.cat-shopping {
+  background: var(--cat-shopping-bg);
+  color: var(--cat-shopping-text);
+}
+
+.todo-category-badge.cat-other {
+  background: var(--cat-other-bg);
+  color: var(--cat-other-text);
+}
+
+/* Delete Button */
+.delete-item-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  color: var(--text-light);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  opacity: 0;
+}
+
+.todo-item-card:hover .delete-item-btn {
+  opacity: 1;
+}
+
+.delete-item-btn:hover {
+  background: var(--danger-light);
+  color: var(--danger);
+}
+
+.delete-item-btn:active {
+  transform: scale(0.95);
+}
+
+/* On mobile, show delete button always */
+@media (max-width: 640px) {
+  .delete-item-btn {
+    opacity: 1;
+  }
+}
