@@ -1,0 +1,98 @@
+@import './app.css';
+@import './components/Auth.css';
+@import './components/TodoInput.css';
+@import './components/TodoItem.css';
+@import './components/TodoList.css';
+@import './components/TodoStats.css';
+
+:root {
+  --font-family: 'Plus Jakarta Sans', sans-serif;
+  
+  /* Color Palette - Soft Blues and Clean Tones */
+  --bg-gradient: linear-gradient(135deg, #e0f2fe 0%, #f0f9ff 50%, #e0e7ff 100%);
+  --card-bg: rgba(255, 255, 255, 0.7);
+  --card-border: rgba(255, 255, 255, 0.5);
+  
+  --primary: #0284c7;
+  --primary-hover: #0369a1;
+  --primary-light: #e0f2fe;
+  
+  --text-dark: #0f172a;
+  --text-medium: #475569;
+  --text-light: #94a3b8;
+  
+  --success: #10b981;
+  --success-light: #d1fae5;
+  --success-dark: #065f46;
+  
+  --danger: #ef4444;
+  --danger-light: #fee2e2;
+  --danger-hover: #dc2626;
+
+  /* Categories Colors */
+  --cat-work-bg: #e0f2fe;
+  --cat-work-text: #0369a1;
+  
+  --cat-personal-bg: #fef3c7;
+  --cat-personal-text: #b45309;
+  
+  --cat-shopping-bg: #f3e8ff;
+  --cat-shopping-text: #7e22ce;
+  
+  --cat-other-bg: #f1f5f9;
+  --cat-other-text: #475569;
+  
+  --shadow-sm: 0 2px 8px -1px rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 10px 25px -5px rgba(2, 132, 199, 0.08), 0 8px 16px -6px rgba(0, 0, 0, 0.03);
+  --shadow-lg: 0 20px 40px -15px rgba(0, 0, 0, 0.1);
+  
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 20px;
+  --radius-full: 9999px;
+  
+  --transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-normal: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: var(--font-family);
+  background: var(--bg-gradient);
+  background-attachment: fixed;
+  color: var(--text-dark);
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 2rem 1rem;
+  overflow-x: hidden;
+}
+
+#root {
+  width: 100%;
+  max-width: 580px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--text-light);
+  border-radius: var(--radius-full);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-medium);
+}
